@@ -13,7 +13,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'family.html',
 })
 export class FamilyPage {
-
+uid:"string"
   kidList : AngularFireObject<any>
 
   myKid : KidsConfig = {
@@ -23,7 +23,8 @@ export class FamilyPage {
     Address : '',
     Stage : '',
     Email : '',
-    Password: ''
+    Password: '',
+
   };
 
   itemArray =[];
@@ -46,7 +47,7 @@ export class FamilyPage {
       }
 
       this.myObject.forEach(element => {
-        if (this.myAuth.auth.currentUser.uid == element[1]['Password']) {
+        if (this.myAuth.auth.currentUser == element[1]['Password']) {
           this.myKid.FirstName = element[1]['FirstName']
           this.myKid.LastName = element[1]['LastName']
           this.myKid.Phone = element[1]['Phone']
