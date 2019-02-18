@@ -1,3 +1,13 @@
+
+<!-- <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <img src="assets/imgs/logo2.png">
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div> -->
+
+
 <ion-content>
     <img src="assets/imgs/home/header.png" class="img1">
   
@@ -11,7 +21,7 @@
         </ion-thumbnail>
         <h2 (click)="admin()">صفحة الادارة</h2>
         <p>التحكم الكامل بالتطبيق</p>
-        <button (click) = "admin()" ion-button clear item-end>الدخول</button>
+        <button (click) = "admin()" ion-button clear item-end><b><h3>الدخول</h3></b></button>
       </ion-item>
       
       <ion-item class="familyPage" >
@@ -20,7 +30,7 @@
         </ion-thumbnail>
         <h2 (click)="family()">صفحة العائلة</h2>
         <p> يمكن مشاهدة تفاصيل الطالب </p>
-        <button (click) = "family()" ion-button clear item-end>الدخول</button>
+        <button (click) = "family()" ion-button clear item-end><b><h3>الدخول</h3></b></button>
       </ion-item>
     </ion-list>
     

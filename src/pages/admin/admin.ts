@@ -6,8 +6,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { HomePage } from '../home/home';
 import { OneSignal } from '@ionic-native/onesignal';
 
-import { LocalNotifications } from '@ionic-native/local-notifications';
-import { FCM } from '@ionic-native/fcm';
+//import { LocalNotifications } from '@ionic-native/local-notifications';
+//import { FCM } from '@ionic-native/fcm';
 import { SignUpPage } from '../sign-up/sign-up';
 import { AngularFireAuth} from '@angular/fire/auth';
 import { ShowPage } from '../show/show';
@@ -27,29 +27,46 @@ export class AdminPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
 
-public alertCtrl: AlertController,private LocalNotifications :LocalNotifications ,private fcm:FCM ,public authi : AngularFireAuth ,public oneSignal: OneSignal,  public db : AngularFireDatabase) {
+public alertCtrl: AlertController  ,public authi : AngularFireAuth ,public oneSignal: OneSignal,  public db : AngularFireDatabase) {
+  this.OneSignalApp();
   }
-
-  firebaseMessage(){
-    this. fcm.getToken().then(token => {
-      //alert(token);
-     });
+  OneSignalApp(){
+    this.oneSignal.startInit('359fc310-9d57-43a3-8129-86d578d9abe9', ' 954449921695');
+   
+   this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
+   
+   this.oneSignal.handleNotificationReceived().subscribe(() => {
+ 
+    alert('notification is received');
+   });
+   
+   this.oneSignal.handleNotificationOpened().subscribe(() => {
+    alert('notification is Opened');
+   
+   });
+   
+  this.oneSignal.endInit();
+  }
+  // firebaseMessage(){
+  //   this.getToken().then(token => {
+  //     //alert(token);
+  //    });
      
-     this.fcm.onNotification().subscribe(data => {
-       if(data.wasTapped){
-         console.log("Received in background");
-       alert(data.title+ " / "+ data.body);
-       this.titlefirebase=data.title;
-       this.bodyfirebase=data.body;
-       } else {
-         console.log("Protect kindergarten");
-        alert("Protect kindergarten");
-       };
-     });
+    //  this.fcm.onNotification().subscribe(data => {
+    //    if(data.wasTapped){
+    //      console.log("Received in background");
+    //    alert(data.title+ " / "+ data.body);
+    //    this.titlefirebase=data.title;
+    //    this.bodyfirebase=data.body;
+    //    } else {
+    //      console.log("Protect kindergarten");
+    //     alert("Protect kindergarten");
+    //    };
+    //  });
      
-  ;
+  // ;
      
-   }
+  //  }
   goBack(){
   this.navCtrl.push(HomePage)
 
@@ -96,7 +113,7 @@ public alertCtrl: AlertController,private LocalNotifications :LocalNotifications
   }
 
   SignUp(){
-    this.navCtrl.push(SignUpPage)
+     this.navCtrl.push(SignUpPage)
   }
   send(){
     this.db.list("ids").valueChanges().subscribe( ids => {
@@ -105,7 +122,7 @@ public alertCtrl: AlertController,private LocalNotifications :LocalNotifications
         
              
               this.oneSignal.postNotification({
-                app_id:"3a315760-1e5d-4301-ac23-2d13ac4b6697",
+                app_id:"91e98635-86c9-4ace-9baf-b66c73ddc968",
                 include_player_ids:[id['id']],
                 contents: {
                   en: "message"

@@ -17,7 +17,14 @@
       <br>
       <b>كلمة المرور</b>
       <br>
-  <input class="passInput" type="password" name="lastname" value="" [(ngModel)]='info.password'>
+ 
+  <input class="txtPass"  type="{{type}}" name="password"   value=""  [(ngModel)]='info.password'>
+  <button *ngIf="!showPass" item-right (click)="showPassword()">
+    <ion-icon name="eye" style="font-size:22px;" color="blue" ></ion-icon>
+    </button>
+  <button *ngIf="showPass" item-right (click)="showPassword()">
+      <ion-icon name="eye" style="font-size:18px;" color="blue"  ></ion-icon>
+  </button>
       <br>
       <br>
       <br>

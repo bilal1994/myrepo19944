@@ -1,7 +1,7 @@
 <!-- compelte! -->
 <ion-header>
   <ion-navbar color="primary">
-  
+    
       <ion-title>صفحةالعائلة</ion-title>
     </ion-navbar>
   </ion-header>
@@ -14,30 +14,30 @@
   
     <div dir="rtl" class="formKidInfo">
       <div class="kidName">
-          <tr *ngFor="let item of itemArray" >
-        <h3>اسم الطالب:{{myKid.FirstName}}{{myKid.LastName}} </h3>
-      
+        <h3>اسم الطالب: </h3>
+        {{data.FirstName}} {{data.LastName}}
       </div>
       <div class="kidStage">
-        <h3>المرحلة:        {{myKid.Stage}}</h3>
-
+        <h3>المرحلة:</h3>
+        {{data.Stage}}
       </div>
       <div class="kidPhon">
-        <h3>رقم الهاتف:   {{myKid.Phone}}</h3>
-      
+        <h3>رقم الهاتف: </h3>
+        {{data.Phone}}
       </div>
       <div class="kidAddress">
-        <h3>العنوان:      {{myKid.Address}} </h3>
-  
+        <h3>العنوان: </h3>
+        {{data.Address}}
       </div>
       <div class="kidEmail">
-        <h3>البريد الالكتروني:     {{myKid.Email}} </h3>
-   
+        <h3>البريد الالكتروني: </h3>
+        {{data.Email}}
       </div>
-      <div class="Password">
-        <h3>كلمة المرور: {{myKid.Password}} </h3>
-   
-      </div>
+      <!-- <div class="Password">
+        <h3>كلمة المرور: </h3>
+        {{data.Password}}
+      </div> -->
+  
   
     </div>
   

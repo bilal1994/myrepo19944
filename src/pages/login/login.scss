@@ -12,6 +12,7 @@ page-login {
         margin: 10px 0 10px 0;
         color: beige;
         background-color: #215175;
+        margin-right: -30px;
 
 
     }
@@ -23,23 +24,23 @@ page-login {
 
     }
     .emailInput{
-        width: 100%;
+        width: 90%;
         height: 35px;
         font-size: 20px;
         border-radius: 50px;
         border:2.5px solid #215175;
         text-align: center;
-
+margin-left: 40px;
 
     }
-    .passInput{
-        width: 100%;
+    .txtPass{
+        width:82%;
         height: 35px;
         font-size: 20px;
         border-radius: 50px;
         border:2.5px solid #215175;
         text-align: center;
-
+  
 
     }
 

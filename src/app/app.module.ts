@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+//import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -14,10 +15,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 
 
-import { LocalNotifications } from '@ionic-native/local-notifications';
+//import { LocalNotifications } from '@ionic-native/local-notifications';
 
-import { AngularFireAuthModule } from '@angular/fire/auth';
-
+//import { AngularFireAuthModule } from '@angular/fire/auth';
+import { DNS } from '@ionic-native/dns';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,11 +26,12 @@ import { KidsServicesProvider } from '../providers/kids-service/kids-service';
 import { ShowPage } from '../pages/show/show';
 import { AddNewPage } from '../pages/add-new/add-new';
 import { AngularFireAuth} from '@angular/fire/auth';
-
-import { FCM } from '@ionic-native/fcm';
+// import { FCM } from '@ionic-native/fcm';
 import {OneSignal} from '@ionic-native/onesignal'
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { SingleShowPage } from '../pages/single-show/single-show';
+ import { AngularFireDatabase} from '@angular/fire/database-deprecated';
+
 
 export const fireconfig = {
   apiKey: "AIzaSyCe3H4pnxDfcXWnDjPnpAxNre6dX3FFylc",
@@ -53,15 +55,18 @@ export const fireconfig = {
     LoginPage,
     SignUpPage,
     FamilyPage,
-    SingleShowPage,
-    AddNewPage
+    SingleShowPage, 
+    AddNewPage,
+    
 
   ],
   imports: [
+   
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(fireconfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    
    
   ],
   bootstrap: [IonicApp],
@@ -77,7 +82,8 @@ export const fireconfig = {
     FamilyPage,
     ShowPage,
     SingleShowPage,
-    AddNewPage
+    AddNewPage,
+
   
     
   ],
@@ -87,12 +93,13 @@ export const fireconfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     KidsServicesProvider,
     AuthServiceProvider,
-    FCM,
+    // FCM,
     OneSignal,
     AngularFireAuth, 
-    LocalNotifications
+    //LocalNotifications,
+    DNS,
     
-  
+  AngularFireDatabase
   ]
 })
 export class AppModule {}

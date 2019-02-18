@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { KidsServicesProvider } from '../../providers/kids-service/kids-service';
 import { KidsConfig } from '../../model/kidsDB';
 import { AngularFireDatabase, AngularFireObject, } from '@angular/fire/database';
-import { AdminPage } from '../admin/admin';
+//import { AdminPage } from '../admin/admin';
 import { SingleShowPage } from '../single-show/single-show';
 import { HomePage } from '../home/home';
 
@@ -77,7 +77,7 @@ export class ShowPage {
   Delete(kids){
     this.edit.deletekids(kids)
     console.log("Deleted")
-    this.navCtrl.setRoot(AdminPage)
+    this.navCtrl.setRoot(ShowPage)
   }
 
   showPrompt(key, FirstName, LastName, Phone, Address, Email,Password) {

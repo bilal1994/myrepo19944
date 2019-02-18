@@ -11,7 +11,8 @@ import { HomePage } from '../home/home';
   templateUrl: 'login.html',
 })
 export class LoginPage {
- 
+  passwordType :string = 'password';
+  passwordIcon :string = 'eye-off';
   info = {
     email : '',
     password : ''
@@ -22,6 +23,23 @@ export class LoginPage {
    
      
     }
+    showHide(){
+      console.log('hi');
+      this.passwordType=this.passwordType==='text' ? 'password' :'text';
+      this.passwordIcon=this.passwordIcon=== 'eye-off' ? 'eye':'eye-off';
+    }
+    public type='password';
+    public showPass= false;
+  
+    showPassword(){
+    this.showPass=!this.showPass;
+    if(this.showPass){
+      this.type='text';
+  
+    }else{
+      this.type='password';
+    }
+  }
 
     ionViewDidLoad() {
       console.log('ionViewDidLoad LoginPage');
