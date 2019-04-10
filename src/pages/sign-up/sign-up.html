@@ -1,14 +1,20 @@
 <!-- complete! -->
-<ion-header >
-  <ion-navbar color="primary">
-    <ion-title>تسجيل جديد</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-header>
+    <ion-navbar color="primary" >
+        <ion-buttons left dir="ltr"  (click)="goBack()">
+          <button navPop ion-button icon-only >
+            <ion-icon color="light" name="arrow-forward"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>  تسجيل جديد</ion-title>
+      </ion-navbar>
+    </ion-header>
+  
+  
 
 <ion-content class="mainPage">
   <img class="headerImg" src="assets/imgs/sginup.png">
   
-
 
    <ion-label dir="rtl"><h5>عنوان البريد الالكتروني</h5></ion-label>
    

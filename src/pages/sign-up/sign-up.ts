@@ -1,9 +1,9 @@
 import { Component,  } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-// import { AdminPage } from '../admin/admin';
-import { FamilyPage } from '../family/family';
-import { HomePage } from '../home/home';
+ import { AdminPage } from '../admin/admin';
+//import { FamilyPage } from '../family/family';
+//import { HomePage } from '../home/home';
 import { AddNewPage } from '../add-new/add-new';
 
 
@@ -59,72 +59,21 @@ signUp(){
     if(localStorage.getItem("myId") == "true"){
      console.log( localStorage.getItem("myId") + "" 
      +" you are logged in !!")
-      this.navCtrl.push(AddNewPage)
+      this.navCtrl.push(AdminPage)
 
     }
+    
   }
+  
   
   // this.data.password =""
   // this.data.email =""
    ) }
 
-
+   goBack(){
+    this.navCtrl.push(AdminPage)
+  
+    console.log('goBackIsClicked')
+  }
 }
-            // .then( ()=> {
-
-    //   //   نجاح العملية
-    //   this.navCtrl.push(FamilyPage)
-    //      }).catch( err=> {
-   
-      
-         
-    //    //  في حال خطأ
-         
-         
-    //           if(err.message == "The email address is badly formatted."){
-         
-    //             this.showalert("بريد الكتروني غير صالح")
-         
-    //           }
-         
-         
-    //           if(err.message == "The email address is already in use by another account."){
-         
-    //            this.showalert("بريد الكتروني مستخدم")
-         
-    //           }
-         
-         
-    //           if(err.message == "A network error (such as timeout, interrupted connection or unreachable host) has occurred."){
-         
-    //             this.showalert("يرجى التحقق من الاتصال بلشبكة")
-         
-    //           }
-         
-         
-    //         if(err.message == "Password should be at least 6 characters"){
-         
-    //           this.showalert("كلمة مرور قصيرة");
-         
-    //         }
-         
-    //          })
-         
-         
-         
-    //        }
-         
-    //      showalert(message){
-         
-    //          var alert = this.alert.create({
-         
-    //            subTitle:message,
-         
-    //            buttons:["حسنا"]
-         
-    //          });
-         
-    //          return alert.present();
-      
-         
-    //        
+       

@@ -1,4 +1,9 @@
 page-sign-up {
+
+  .back-button.show-back-button {
+    display: none;
+    
+}
   img{
     width:100%;
   }
@@ -59,6 +64,9 @@ margin-right: auto;
   transform: translate(-50%,-50%)
 }
 
- 
+ .hg{
+   width: 100px;
+   margin-left: 40px;
+ }
 
 }

@@ -6,6 +6,7 @@ import { AngularFireDatabase, AngularFireObject, } from '@angular/fire/database'
 //import { AdminPage } from '../admin/admin';
 import { SingleShowPage } from '../single-show/single-show';
 import { HomePage } from '../home/home';
+import { AdminPage } from '../admin/admin';
 
 @IonicPage()
 @Component({
@@ -50,7 +51,7 @@ export class ShowPage {
       });
   }
   goBack(){
-    this.navCtrl.push(HomePage)
+    this.navCtrl.push(AdminPage)
   
     console.log('goBackIsClicked')
   }

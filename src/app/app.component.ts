@@ -22,21 +22,19 @@ export class MyApp {
     public auth : AngularFireAuth,public oneSignal: OneSignal,public db : AngularFireDatabase) {
 
 
-     
-    auth.authState.subscribe(user => {
+      auth.authState.subscribe(user => {
 
-      if(user == null || undefined){
-
-            this.rootPage = HomePage
-
-      } else {
-
-
-            this.rootPage = TabsPage
-
-
-      }
-      
+        if(user == null || undefined){
+  
+              this.rootPage = HomePage
+  
+        } else {
+  
+  
+              this.rootPage = TabsPage
+  
+  
+        }
     //   if(user != undefined  || null ){
     //     if(!user.emailVerified){
     //       this.rootPage = HomePage

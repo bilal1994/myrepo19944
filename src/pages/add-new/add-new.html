@@ -5,43 +5,48 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-   
-
-  <ion-navbar color="primary">
-    <ion-title>اضافة طالب</ion-title>
-  </ion-navbar>
-
-</ion-header>
+    <ion-navbar color="primary" >
+        <ion-buttons left dir="ltr"  (click)="goBack()">
+          <button navPop ion-button icon-only >
+            <ion-icon color="light" name="arrow-forward"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>  اضافة الطالب</ion-title>
+      </ion-navbar>
+    </ion-header>
+    <ion-icon ios="ios-person" style="color: #215175;" ></ion-icon>
 
 <ion-content>
 
     <ion-list>
+      
 
         <ion-item>
-
+          <ion-icon item-left md="md-person" ios="md-person" style="color: #215175;" ></ion-icon>  
 <ion-input class="txtEmail" type="text" placeholder="الاسم الاول"  #FirstName></ion-input>
         </ion-item>
 
         <ion-item>
-            
+          <ion-icon item-left md="md-people" ios="md-people" style="color: #215175;" ></ion-icon>  
 <ion-input class="txtEmail"  placeholder="الاسم الثاني" #LastName></ion-input>
           </ion-item>
    
       
         <ion-item>
-          
+          <ion-icon item-left md="md-call" ios="md-call" style="color: #215175;" ></ion-icon>  
 <ion-input class="txtEmail" type="text" placeholder="رقم الهاتف" #Phone></ion-input>
         </ion-item>
         <ion-item>
-            
+          <ion-icon item-left md="md-navigate" ios="md-navigate" style="color: #215175;" ></ion-icon>    
 <ion-input class="txtEmail" type="text" placeholder="العنوان" #Address></ion-input>
           </ion-item>
           <ion-item>
               
 <ion-input class="txtEmail" type="text" placeholder="المرحلة" #Stage></ion-input>
-     
+<ion-icon item-left md="md-stats" ios="md-stats"  style="color: #215175;"></ion-icon>
 </ion-item>
 <ion-item>
+    <ion-icon item-left md="md-at" ios="md-at"  style="color: #215175;"></ion-icon>
  <ion-input class="txtEmail" type="Email" placeholder="البريد الالكتروني" #Email></ion-input>
          </ion-item>
       </ion-list>

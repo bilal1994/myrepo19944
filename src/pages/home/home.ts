@@ -54,14 +54,14 @@ tabBarElement:any;
   //private dns: DNS
   }
 
-  ionViewDidLoad(){
-    this.tabBarElement.style.display ='none';
-    setTimeout(()=>{
-      this.splash =false;
+  // ionViewDidLoad(){
+  //   this.tabBarElement.style.display ='none';
+  //   setTimeout(()=>{
+  //     this.splash =false;
       
-    this.tabBarElement.style.display ='flex';
-    },4000);
-  }
+  //   this.tabBarElement.style.display ='flex';
+  //   },4000);
+  // }
 
   admin() {
     const prompt = this.alert.create({

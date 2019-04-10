@@ -8,6 +8,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 //import { AngularFireModule } from '@angular/fire';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { FamilyPage } from '../family/family';
+import { LoginPage } from '../login/login';
 
 
 @IonicPage()
@@ -16,7 +17,15 @@ import { FamilyPage } from '../family/family';
   templateUrl: 'add-new.html',
 })
 export class AddNewPage {
+info={
 
+  FirstName :'',
+  LastName :'',
+  Phone :'',
+  Address :'',
+  Stage :'',
+  Email : ''
+}
  
   // public text:string;
   // public FirstName:string
@@ -28,6 +37,15 @@ export class AddNewPage {
   }
 
   addnewuser(FirstName,LastName,Phone,Address,Stage,Email){
+    if(FirstName == "" ||LastName == "" || Phone == "" || Address == "" && Stage == "" || Email == ""){
+      const alert = this.alertCtrl.create({
+      title: 'تنبية',
+      subTitle: 'يرجى مليء جميع الحقول ',
+      buttons: ['OK']
+    });
+    alert.present();}
+    else{
+      
     this.db.list("kidsdb").push({
       FirstName :FirstName,
       LastName :LastName,
@@ -37,7 +55,7 @@ export class AddNewPage {
       Email : Email
 
     }).then(newpople =>{
-      this.navCtrl.push(FamilyPage ,{
+      this.navCtrl.setRoot(FamilyPage ,{
         FirstName:FirstName,
         LastName :LastName,
         Phone :Phone,
@@ -45,11 +63,21 @@ export class AddNewPage {
         Stage : Stage ,
         Email :Email
 
-      });
+
+      });{ {
+        
+    //     const alert = this.alertCtrl.create({
+    //       title: '????? ????',
+    //       subTitle: '??? ????? ???? ????',
+    //       buttons: ['??']
+    //     });
+    //     alert.present();
+       }
+    }
     },error=>{console.log(error);});
 
   }
-
+  }
 
   ionViewDidLoad() {
     console.log("your email : " + this.myAuth.auth.currentUser.email)
@@ -69,14 +97,14 @@ export class AddNewPage {
   //     })
   // }
 
-  showAlert() {
-    const alert = this.alertCtrl.create({
-      title: 'اضافة طالب',
-      subTitle: 'تمت اضافة طالب جديد',
-      buttons: ['تم']
-    });
-    alert.present();
-  }
+  // showAlert() {
+  //   const alert = this.alertCtrl.create({
+  //     title: '????? ????',
+  //     subTitle: '??? ????? ???? ????',
+  //     buttons: ['??']
+  //   });
+  //   alert.present();
+  // }
 
 
 }

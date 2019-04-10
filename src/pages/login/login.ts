@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
  import { FamilyPage } from '../family/family';
 import { HomePage } from '../home/home';
+import { ShowPage } from '../show/show';
 
 
 @IonicPage()
@@ -39,8 +40,13 @@ export class LoginPage {
     }else{
       this.type='password';
     }
+    
   }
-
+  goBack(){
+    this.navCtrl.push(HomePage)
+  
+    console.log('goBackIsClicked')
+  }
     ionViewDidLoad() {
       console.log('ionViewDidLoad LoginPage');
     }
@@ -56,7 +62,7 @@ export class LoginPage {
       }
       else {
         this.auth.SignIn(this.info).then(() =>
-        this.navCtrl.setRoot(FamilyPage),
+        this.navCtrl.setRoot(ShowPage),
         error => {
           const alert = this.alertCtrl.create({
               title: 'تنبيه',

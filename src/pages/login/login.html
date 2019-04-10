@@ -1,12 +1,14 @@
 <!-- complet! -->
 <ion-header>
-
-  <ion-navbar color="primary">
-      <ion-title>تسجيل دخول </ion-title>
-    </ion-navbar>
-  
-  </ion-header>
-  
+    <ion-navbar color="primary" >
+        <ion-buttons left dir="ltr"  (click)="goBack()">
+          <button navPop ion-button icon-only >
+            <ion-icon color="light" name="arrow-forward"></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>  تسجيل دخول</ion-title>
+      </ion-navbar>
+    </ion-header>
   <ion-content class="ionCnt" >
     <img class="headerImg" src="assets/imgs/loginForm/familyLogin.png">
     <form class="loginForm" action="">
@@ -29,11 +31,11 @@
       <br>
       <br>
       <button class="loginBtn" (click)="login()">
-        تسجيل دخول
+        <ion-icon name="md-contact"></ion-icon>   تسجيل دخول
       </button>
   
   <button class="loginBtn" (click)="cnclBtn()">
-    الغاء
+    <ion-icon name="md-exit"></ion-icon>   الغاء
   </button>
       <!-- <button class="loginBtn" (click)="logOut()">
         خروج

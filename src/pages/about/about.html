@@ -1,39 +1,119 @@
-<!-- complet! -->
+assets/imgs/bilal.jpg
+215175
+2e628ada
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      عن التطبيق
+    </ion-title>
+  </ion-navbar>
 
+  <ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="pages" color="primary">
+      <ion-segment-button value="0" (click)="selectedtab(0)">
+        الفكرة
+      </ion-segment-button>
+      <ion-segment-button value="1" (click)="selectedtab(1)">
+        فريق العمل
+      </ion-segment-button>
+    
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
-  <img src="assets/imgs/Logoabout.png">
-<ion-card>
-<ion-card-content class="continer">
- <p class="pItem">
-جاءت فكرة التطبيق لحماية اطفال الروضات و حتى المدارس الابتدائية من الخطف
-و انتحال الشخصية حيث لا يتم تسليم الطفل او الطالب الى اي شخص الا بعد
-ادخال كلمة السر التي يزودها ولي امر الطالب او الطفل للادارة
-حرصنا منا على ابنائكم بأن تكونوا حريصين و مواضبين على استخدام هذا التطبيق
-فهو لحماية اطفالكم
- </p>
-</ion-card-content>
-<!-- <img src="assets/imgs/Logo.png"> -->
-</ion-card>
+  <ion-slides #slider dir="rtl" (ionSlideWillChange)="moveButton($event)">
 
-<ion-card>
-<ion-card-content>
+  
+
+    <ion-slide >
+      <div class="div2">
+        <img id="myPhaLogo" src="assets/imgs/logo.png" >
+        <div id="theIdea">
+          <div id="scrollable">
+            <p class="p1">
+              جاءت فكرة التطبيق لحماية اطفال الروضات و حتى المدارس الابتدائية من الخطف
+              و انتحال الشخصية حيث لا يتم تسليم الطفل او الطالب الى اي شخص الا بعد
+              ادخال كلمة السر التي يزودها ولي امر الطالب او الطفل للادارة
+              حرصنا منا على ابنائكم بأن تكونوا حريصين و مواضبين على استخدام هذا التطبيق
+              فهو لحماية اطفالكم     </p>
+            <h6><b>
+                آلية عمل البرنامج:
+              </b></h6>
+            <ol style="padding-right: 15px;">
+              <li><b>المستخدم:</b>
+                <ul style="list-style-type:disc;">
+                  <li>يجب التسجيل كمستخدم.</li>
+                  <li>يمكن له تسجيل كمستخدم جديد ولذلك لعرض بيانات الطالب </li>
+                </ul>
+              </li>
+              <li><b>الادارة :</b>
+                <ul style="list-style-type:disc;;">
+                  <li>عند خروج الطالب يجب ادخال  كلمة مرور الطالب من قبل ولي  امر الطالب حصرا.</li>
+                  <li> لايمكن للمستخدم النشر والتعليق في التطبيق.</li>
+                 
+                </ul>
+          
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </ion-slide>
 
 
-<ion-list >
- 
- 
- <ion-item class="listItem">
-   <ion-avatar item-start>
-     <img class="y" src="assets/imgs/bilal.jpg" >
-   </ion-avatar>
-   <h2>Bilal Fawwaz</h2>
-   <h3><b>Programming</b></h3>
- </ion-item>
-</ion-list>
 
-</ion-card-content>
-</ion-card>
+    <ion-slide style="overflow-y:scroll">
+      <ion-row>
+       
+      </ion-row>
 
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <img src="assets/imgs/bilal.jpg"  (click)="showinfo0()" alt="Avatar" class="myPhoto">
+            <ion-card-content>
+                <h2 style="font-size:170%"><b> بلال فواز</b></h2>
+            </ion-card-content>
+            
 
+            
 
+          </ion-card>
+        </ion-col>
+        
+        
+        
+        <ion-col>
+          <ion-card>
+            <img src="assets/imgs/icono-ejecutivo-joven-del-perfil-de-la-mujer-81933530.jpg"  (click)="showinfo1()" alt="Avatar" class="myPhoto">
+            <ion-card-content>
+                <h2 style="font-size:170%"><b>هبه ستار</b></h2>
+            </ion-card-content>
+          </ion-card>
+        </ion-col> 
+      </ion-row>
+       
+      <ion-col>
+        <ion-card>
+          <img src="assets/imgs/photo_2017-04-18_05-45-17.jpg"  (click)="showinfo2()" alt="Avatar" class="myPhoto">
+          <ion-card-content>
+              <h2 style="font-size:170%"><b>ا. محمد عيسى</b></h2>
+          </ion-card-content>
+        </ion-card>
+      </ion-col> 
+      
+    
+      
+      
+
+      <ion-row class="s" >
+       
+        <ion-col>
+      </ion-col>
+      </ion-row>
+    </ion-slide>
+
+  
+
+  </ion-slides>
 </ion-content>
