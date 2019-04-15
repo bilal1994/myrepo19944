@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "670260969228",
+    "firebase_url": "https://ionicas-397ad.firebaseio.com",
+    "project_id": "ionicas-397ad",
+    "storage_bucket": "ionicas-397ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670260969228:android:f2d363a149cc73fe",
+        "android_client_info": {
+          "package_name": "org.codeforiraq.kids"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670260969228-31p7fodvmf34p4r8k7qbpk6jjb7r36an.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNY2uE-VuvCsfemPtGf0smFL6kx1pbCas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670260969228-31p7fodvmf34p4r8k7qbpk6jjb7r36an.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

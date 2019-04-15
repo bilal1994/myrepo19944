@@ -31,7 +31,7 @@ public alertCtrl: AlertController  ,public authi : AngularFireAuth ,public oneSi
   this.OneSignalApp();
   }
   OneSignalApp(){
-    this.oneSignal.startInit('359fc310-9d57-43a3-8129-86d578d9abe9', ' 954449921695');
+    this.oneSignal.startInit('359fc310-9d57-43a3-8129-86d578d9abe9', ' 670260969228');
    
    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.InAppAlert);
    
@@ -122,7 +122,7 @@ public alertCtrl: AlertController  ,public authi : AngularFireAuth ,public oneSi
         
              
               this.oneSignal.postNotification({
-                app_id:"91e98635-86c9-4ace-9baf-b66c73ddc968",
+                app_id:"359fc310-9d57-43a3-8129-86d578d9abe9",
                 include_player_ids:[id['id']],
                 contents: {
                   en: "message"
